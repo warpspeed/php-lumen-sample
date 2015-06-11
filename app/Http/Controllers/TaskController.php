@@ -41,7 +41,7 @@ class TaskController extends BaseController
 
     public function clearComplete()
     {
-        $tasks = \App\Task::all();
+        $tasks = \App\Task::where('is_complete', true)->get();
 
         foreach($tasks as $task)
         {
