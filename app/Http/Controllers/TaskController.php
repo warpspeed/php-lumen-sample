@@ -27,7 +27,7 @@ class TaskController extends BaseController
         try {
             $task = \App\Task::findOrFail($id);
 
-            $task->is_complete = $task->is_complete ? false : true;
+            $task->is_complete = !$task->is_complete;
 
             $task->save();
 
