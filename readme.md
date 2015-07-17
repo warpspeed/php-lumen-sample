@@ -2,6 +2,10 @@
 
 [Lumen](http://lumen.laravel.com/) is a PHP micro-framework built by the developers of Laravel. [WarpSpeed](https://warpspeed.io) makes it incredibly simple to work with and deploy Lumen and other PHP based projects. This guide will help you get up and running with Lumen and WarpSpeed.
 
+Each of the WarpSpeed sample projects is a simple "To Do" list. All of the projects, regardless of language or framework, have the same basic functionality. If you are new to a particular language or framework, just compare the code to a language example that you are familiar with and you will be able to catch on quickly. A preview of the deployed project is show below:
+
+![Sample Screenshot](http://docs.warpspeed.io/assets/img/sample_project_screenshot.png)
+
 ## Vagrant Development Envrionment
 
 This guide assumes that you are using the WarpSpeed Vagrant development environment. Doing so will help you follow best practices and keep your development and production environments as similar as possible. If you are not using WarpSpeed Vagrant, ignore the sections that involve using the VM.
