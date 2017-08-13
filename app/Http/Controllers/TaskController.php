@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Task;
 
 class TaskController extends BaseController
 {
@@ -11,13 +12,12 @@ class TaskController extends BaseController
     {
         $inputs = $request->only('name');
 
-        if($inputs['name'] == null)
-        {
+        if($inputs['name'] == null) {
             return redirect('/');
         }
 
-    	$task = new \App\Task();
-        $task->name        = $inputs['name'];
+    	$task = new Task();
+        $task->name = $inputs['name'];
         $task->is_complete = false;
     	$task->save();
 
@@ -27,26 +27,23 @@ class TaskController extends BaseController
     public function toggleComplete($id)
     {
         try {
-            $task = \App\Task::findOrFail($id);
 
+            $task = Task::findOrFail($id);
             $task->is_complete = !$task->is_complete;
-
             $task->save();
 
             return redirect('/');
 
         } catch (Exception $e) {
-
             return redirect('/')->withErrors($e);
         }
     }
 
     public function clearComplete()
     {
-        $tasks = \App\Task::where('is_complete', true)->get();
+        $tasks = Task::where('is_complete', true)->get();
 
-        foreach($tasks as $task)
-        {
+        foreach($tasks as $task) {
             $task->delete();
         }
 
