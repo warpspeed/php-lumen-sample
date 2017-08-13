@@ -12,12 +12,10 @@
 */
 
 $app->get('/', function() use ($app) {
-
 	$tasks = \App\Task::orderBy('created_at', 'desc')->get();
-
 	return view('index', ['tasks' => $tasks]);
 });
 
-$app->post('tasks/{id}/toggle-complete',	'App\Http\Controllers\TaskController@toggleComplete');
-$app->post('tasks',				'App\Http\Controllers\TaskController@create');
-$app->post('tasks/clear-complete',		'App\Http\Controllers\TaskController@clearComplete');
+$app->post('tasks/{id}/toggle-complete', 'TaskController@toggleComplete');
+$app->post('tasks', 'TaskController@create');
+$app->post('tasks/clear-complete', 'TaskController@clearComplete');
