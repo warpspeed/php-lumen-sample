@@ -1,7 +1,7 @@
 <?php
 
-class TestCase extends Laravel\Lumen\Testing\TestCase {
-
+abstract class TestCase extends Laravel\Lumen\Testing\TestCase
+{
     /**
      * Creates the application.
      *
@@ -11,5 +11,4 @@ class TestCase extends Laravel\Lumen\Testing\TestCase {
     {
         return require __DIR__.'/../bootstrap/app.php';
     }
-
 }

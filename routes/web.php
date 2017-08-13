@@ -18,10 +18,6 @@ $app->get('/', function() use ($app) {
 	return view('index', ['tasks' => $tasks]);
 });
 
-$app->post('tasks/{id}/toggle-complete', 'App\Http\Controllers\TaskController@toggleComplete');
-$app->post('tasks',                        'App\Http\Controllers\TaskController@create');
-$app->post('tasks/clear-complete',         'App\Http\Controllers\TaskController@clearComplete');
-
-
-
-
+$app->post('tasks/{id}/toggle-complete',	'App\Http\Controllers\TaskController@toggleComplete');
+$app->post('tasks',				'App\Http\Controllers\TaskController@create');
+$app->post('tasks/clear-complete',		'App\Http\Controllers\TaskController@clearComplete');

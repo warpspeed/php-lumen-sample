@@ -51,3 +51,4 @@ class TaskController extends BaseController
         return redirect('/');
     }
 }
+
